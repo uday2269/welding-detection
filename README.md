@@ -1,8 +1,3 @@
-Here is the updated `README.md` with **highlighted side headings** and a **Project Overview** section:
-
----
-
-```markdown
 # Welding Defect Detection Using YOLOv5, YOLOv7, YOLOv8, YOLOv11
 
 ## **Project Overview**
@@ -16,42 +11,31 @@ This project aims to automate the detection of welding defects using computer vi
 - **Name**: The Welding Defect Dataset  
 - **Classes**: `['Bad Weld', 'Good Weld', 'Defect']`  
 - **Structure**:
+
 ```
-
 Welding Defect Dataset/
-
 ├── train/
-
 │   ├── images/
-
 │   └── labels/
-
 ├── valid/
-
 │   ├── images/
-
 │   └── labels/
-
 ├── test/
-
 │   ├── images/
-
 │   └── labels/
-
 └── data.yaml
-
-````
+```
 
 ---
 
 ## **Models Used**
 
-| Version | Source Repository | Notes |
-|--------|-------------------|-------|
-| YOLOv5 | https://github.com/ultralytics/yolov5 | Fast and lightweight |
-| YOLOv7 | https://github.com/WongKinYiu/yolov7 | Optimized for accuracy |
-| YOLOv8 | https://github.com/ultralytics/ultralytics | Latest official version |
-| YOLOv11 | Unofficial/Future variant | Assumed for experimentation |
+| Version  | Source Repository                              | Notes                   |
+|----------|------------------------------------------------|-------------------------|
+| YOLOv5   | https://github.com/ultralytics/yolov5          | Fast and lightweight    |
+| YOLOv7   | https://github.com/WongKinYiu/yolov7           | Optimized for accuracy  |
+| YOLOv8   | https://github.com/ultralytics/ultralytics     | Latest official version |
+| YOLOv11  | Unofficial/Future variant                      | Assumed experimental    |
 
 ---
 
@@ -61,22 +45,23 @@ Welding Defect Dataset/
 git clone https://github.com/ultralytics/yolov5
 git clone https://github.com/WongKinYiu/yolov7
 pip install -r requirements.txt
-````
+```
 
-**Dependencies**:
+---
 
-* Python 3.8+
-* torch
-* opencv-python
-* pyyaml
-* matplotlib
+## **Dependencies**
+
+- Python 3.8+
+- torch
+- opencv-python
+- pyyaml
+- matplotlib
 
 ---
 
 ## **Training Commands**
 
-### *YOLOv5*
-
+### YOLOv5
 ```bash
 cd yolov5
 python train.py \
@@ -88,8 +73,7 @@ python train.py \
   --name yolo5-welding
 ```
 
-### *YOLOv7*
-
+### YOLOv7
 ```bash
 cd yolov7
 python train.py \
@@ -102,8 +86,7 @@ python train.py \
   --name yolo7-welding
 ```
 
-### *YOLOv8*
-
+### YOLOv8
 ```bash
 pip install ultralytics
 yolo task=detect mode=train \
@@ -114,8 +97,7 @@ yolo task=detect mode=train \
   name=yolo8-welding
 ```
 
-### *YOLOv11* (assumed similar to YOLOv8)
-
+### YOLOv11 (Assumed similar to YOLOv8)
 ```bash
 yolo task=detect mode=train \
   model=yolov11s.pt \
@@ -133,7 +115,7 @@ yolo task=detect mode=train \
 from PIL import Image
 from ultralytics import YOLO
 
-model = YOLO('runs/train/yolo5-welding/weights/best.pt')  # change as needed
+model = YOLO('runs/train/yolo5-welding/weights/best.pt')  # update path accordingly
 img_path = r"path\to\test\image.jpg"
 results = model(img_path)
 results.show()
@@ -143,30 +125,17 @@ results.show()
 
 ## **Results Summary**
 
-| Model   | Precision        | Recall           | mAP\@0.5         |
-| ------- | ---------------- | ---------------- | ---------------- |
-| YOLOv5  | 88%              | 85%              | 86.5%            |
-| YOLOv7  | 91%              | 88%              | 90.2%            |
-| YOLOv8  | 94%              | 90%              | 92.1%            |
-| YOLOv11 | Work in progress | Work in progress | Work in progress |
+| Model    | Precision | Recall | mAP@0.5        |
+|----------|-----------|--------|----------------|
+| YOLOv5   | 88%       | 85%    | 86.5%          |
+| YOLOv7   | 91%       | 88%    | 90.2%          |
+| YOLOv8   | 94%       | 90%    | 92.1%          |
+| YOLOv11  | Work in progress | Work in progress | Work in progress |
 
 ---
 
 ## **Notes**
 
-* For best performance, use GPU-enabled environments (e.g., Google Colab, local CUDA setup).
-* Ensure correct YAML paths and data formatting to avoid errors during training.
-* Rename datasets and paths without spaces if you encounter access issues on Windows.
-
----
-
-## **Contact**
-
-For questions or suggestions, please open an issue in this repository.
-
-```
-
----
-
-Let me know if you want this saved to a file or adjusted for a specific platform like GitHub or Kaggle.
-```
+- For best performance, use GPU-enabled environments (e.g., Google Colab, local CUDA setup).
+- Ensure correct YAML paths and data formatting to avoid errors during training.
+- Rename datasets and paths without spaces if you encounter access issues on Windows.
