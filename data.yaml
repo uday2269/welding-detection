@@ -1,0 +1,6 @@
+train: C:/Users/udayu/.cache/kagglehub/datasets/sukmaadhiwijaya/welding-defect-object-detection/versions/2/The Welding Defect Dataset/The Welding Defect Dataset/train/images
+val: C:/Users/udayu/.cache/kagglehub/datasets/sukmaadhiwijaya/welding-defect-object-detection/versions/2/The Welding Defect Dataset/The Welding Defect Dataset/valid/images
+test: C:/Users/udayu/.cache/kagglehub/datasets/sukmaadhiwijaya/welding-defect-object-detection/versions/2/The Welding Defect Dataset/The Welding Defect Dataset/test/images
+
+nc: 3
+names: ['Bad Weld', 'Good Weld', 'Defect']
