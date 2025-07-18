@@ -1,14 +1,17 @@
-# welding-detection
-Here is the `README.md` without any emojis:
+Here is the updated `README.md` with **highlighted side headings** and a **Project Overview** section:
 
 ---
 
 ```markdown
 # Welding Defect Detection Using YOLOv5, YOLOv7, YOLOv8, YOLOv11
 
-This project focuses on detecting welding defects from image datasets using the YOLO (You Only Look Once) family of object detection models: YOLOv5, YOLOv7, YOLOv8, and YOLOv11.
+## **Project Overview**
 
-## Dataset
+This project aims to automate the detection of welding defects using computer vision and deep learning techniques. We utilize multiple versions of the YOLO (You Only Look Once) object detection model to train on a labeled dataset of welding images and evaluate their accuracy in identifying and classifying different weld quality categories.
+
+---
+
+## **Dataset**
 
 - **Name**: The Welding Defect Dataset  
 - **Classes**: `['Bad Weld', 'Good Weld', 'Defect']`  
@@ -16,20 +19,32 @@ This project focuses on detecting welding defects from image datasets using the 
 ```
 
 Welding Defect Dataset/
+
 ├── train/
+
 │   ├── images/
+
 │   └── labels/
+
 ├── valid/
+
 │   ├── images/
+
 │   └── labels/
+
 ├── test/
+
 │   ├── images/
+
 │   └── labels/
+
 └── data.yaml
 
 ````
 
-## Models Used
+---
+
+## **Models Used**
 
 | Version | Source Repository | Notes |
 |--------|-------------------|-------|
@@ -38,7 +53,9 @@ Welding Defect Dataset/
 | YOLOv8 | https://github.com/ultralytics/ultralytics | Latest official version |
 | YOLOv11 | Unofficial/Future variant | Assumed for experimentation |
 
-## Setup
+---
+
+## **Environment Setup**
 
 ```bash
 git clone https://github.com/ultralytics/yolov5
@@ -46,14 +63,19 @@ git clone https://github.com/WongKinYiu/yolov7
 pip install -r requirements.txt
 ````
 
-Ensure you have:
+**Dependencies**:
 
-* Python 3.8 or higher
-* `torch`, `opencv-python`, `pyyaml`, `matplotlib`
+* Python 3.8+
+* torch
+* opencv-python
+* pyyaml
+* matplotlib
 
-## Training Commands
+---
 
-### YOLOv5
+## **Training Commands**
+
+### *YOLOv5*
 
 ```bash
 cd yolov5
@@ -66,7 +88,7 @@ python train.py \
   --name yolo5-welding
 ```
 
-### YOLOv7
+### *YOLOv7*
 
 ```bash
 cd yolov7
@@ -80,7 +102,7 @@ python train.py \
   --name yolo7-welding
 ```
 
-### YOLOv8
+### *YOLOv8*
 
 ```bash
 pip install ultralytics
@@ -92,7 +114,7 @@ yolo task=detect mode=train \
   name=yolo8-welding
 ```
 
-### YOLOv11 (assumed interface similar to YOLOv8)
+### *YOLOv11* (assumed similar to YOLOv8)
 
 ```bash
 yolo task=detect mode=train \
@@ -103,7 +125,9 @@ yolo task=detect mode=train \
   name=yolo11-welding
 ```
 
-## Inference Example
+---
+
+## **Inference Example**
 
 ```python
 from PIL import Image
@@ -115,7 +139,9 @@ results = model(img_path)
 results.show()
 ```
 
-## Results
+---
+
+## **Results Summary**
 
 | Model   | Precision        | Recall           | mAP\@0.5         |
 | ------- | ---------------- | ---------------- | ---------------- |
@@ -124,8 +150,23 @@ results.show()
 | YOLOv8  | 94%              | 90%              | 92.1%            |
 | YOLOv11 | Work in progress | Work in progress | Work in progress |
 
-## Notes
+---
 
-* Use Google Colab or a GPU-enabled environment for faster training.
-* Ensure all images and labels are correctly paired.
-* Check `data.yaml` paths carefully if you encounter file not found errors.
+## **Notes**
+
+* For best performance, use GPU-enabled environments (e.g., Google Colab, local CUDA setup).
+* Ensure correct YAML paths and data formatting to avoid errors during training.
+* Rename datasets and paths without spaces if you encounter access issues on Windows.
+
+---
+
+## **Contact**
+
+For questions or suggestions, please open an issue in this repository.
+
+```
+
+---
+
+Let me know if you want this saved to a file or adjusted for a specific platform like GitHub or Kaggle.
+```
